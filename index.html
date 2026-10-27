@@ -7,11 +7,14 @@
 <meta name="description" content="Tạo bill điện tử nạp điện thoại, nạp game, chuyển khoản VietQR. Shop acc, tool và kho file game.">
 <link rel="icon" type="image/jpeg" href="https://i.postimg.cc/MZM2NcPG/1792995075869-48420420298817831-873862406868124075-773c9ee43af69f86ab5a779e6e5d507d.jpg">
 <link rel="apple-touch-icon" href="https://i.postimg.cc/MZM2NcPG/1792995075869-48420420298817831-873862406868124075-773c9ee43af69f86ab5a779e6e5d507d.jpg">
+<meta name="theme-color" content="#06070f">
+<meta property="og:description" content="Tạo bill điện tử nạp điện thoại, nạp game, chuyển khoản VietQR. Shop acc, tool và kho file game.">
+<meta property="og:type" content="website">
 <meta property="og:site_name" content="MT MEDIA GLOBAL">
 <meta property="og:title" content="MT MEDIA GLOBAL">
 <meta property="og:image" content="https://i.postimg.cc/MZM2NcPG/1792995075869-48420420298817831-873862406868124075-773c9ee43af69f86ab5a779e6e5d507d.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{--cy:#00f0ff;--pk:#ff2e93;--bg:#06070f;--tx:#e6f1ff;--mu:#8a96b4;--gl:rgba(18,22,44,.62);--bd:rgba(0,240,255,.2);--grid:rgba(0,240,255,.05);--hd:'Chakra Petch',system-ui,sans-serif;--bd2:'JetBrains Mono',ui-monospace,Consolas,monospace;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 :root[data-theme=light]{--bg:#eef3fb;--tx:#101a30;--mu:#55627f;--gl:rgba(255,255,255,.75);--bd:rgba(0,120,160,.3);--grid:rgba(0,90,140,.06);--cy:#008fa3;--pk:#d4166f}
@@ -315,6 +318,35 @@ dialog{border:1px solid var(--bd);border-radius:20px;background:var(--bg);box-sh
 }
 @media(max-width:400px){.bill-codes{grid-template-columns:minmax(0,1fr)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* ===== Đăng nhập bắt buộc ===== */
+.auth-wrap{display:grid;place-items:center;min-height:calc(100vh - 220px);padding:20px 0}
+.auth-card{width:100%;max-width:420px;padding:24px}
+.auth-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.auth-brand h2{margin:0;font-size:20px}.auth-brand h2 span{color:var(--pk)}.auth-brand small{color:var(--mu)}
+.auth-gate{margin:0 0 12px;padding:9px 12px;border-radius:10px;border:1px solid var(--pk);color:var(--pk);background:rgba(255,46,147,.08);font-size:12.5px}
+.auth-gate[hidden]{display:none}
+.auth-card .tabs button{flex:1}
+.pw{position:relative}.pw input{padding-right:50px}
+.pw button{position:absolute;right:4px;top:50%;transform:translateY(-50%);padding:5px 9px;border-color:transparent;font-size:15px;line-height:1}
+.pw button:hover{transform:translateY(-50%);box-shadow:none}
+.meter{height:5px;border-radius:5px;background:rgba(138,150,180,.25);margin:8px 0 4px;overflow:hidden}
+.meter i{display:block;height:100%;width:0;border-radius:5px;background:var(--pk);transition:width .25s,background .25s}
+.meter i[data-s="3"],.meter i[data-s="4"]{background:var(--cy)}
+#mt{color:var(--mu);font-size:12px}
+.chk{display:flex;align-items:center;gap:8px;color:var(--tx);font-size:12.5px;margin-top:12px;cursor:pointer}
+.chk input{width:auto;margin:0;accent-color:var(--cy)}
+.auth-card .row button{width:100%}
+.auth-card button:disabled{opacity:.55;cursor:not-allowed;transform:none;box-shadow:none}
+.auth-legal{margin:14px 0 0;color:var(--mu);font-size:11.5px;text-align:center}
+.nav-out{margin-left:4px;padding:6px 12px;font-size:12.5px;white-space:nowrap}
+body.guest header nav,body.guest #mobileMenuToggle,body.guest #cartBtn,body.guest #zalo,body.guest footer a[href="#/profile"]{display:none!important}
+body.guest header .logo{margin-right:auto}
+.bill-wm{position:absolute;inset:0;display:grid;place-items:center;font:800 52px var(--hd);letter-spacing:6px;color:rgba(255,255,255,.08);transform:rotate(-24deg);pointer-events:none;white-space:nowrap}
+.bill-note{margin:12px 0 0;color:#8a96b4;font-size:10.5px;text-align:center;line-height:1.4}
+.cart-line{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid var(--bd)}.cart-line button{padding:2px 11px}
+.pt-vnd{color:var(--mu);font-size:11px;font-weight:400}
+.pt-calc{margin-top:14px;text-align:left}.pt-presets{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.pt-presets button{padding:5px 10px;font-size:12px}
+.pt-out{margin:10px 0 4px;font:700 17px var(--hd);color:var(--cy);text-align:center}.pt-out b{color:var(--pk)}
 </style>
 </head>
 <body>
@@ -360,9 +392,11 @@ dialog{border:1px solid var(--bd);border-radius:20px;background:var(--bg);box-sh
 'use strict';
 /* ================= CẤU HÌNH & DỮ LIỆU (sửa tại đây, không cần đụng HTML) ================= */
 const CONFIG = {
-  zalo: 'https://zalo.me/0000000000',               // TODO: thay số Zalo thật
+  zalo: 'https://zalo.me/0397339880',               
   donate: { bin: '', acc: '', name: 'VO MINH THIEN' }, // TODO: điền BIN + số TK để sinh QR donate (hoặc tải ảnh QR lên ở Profile)
-  usdRate: 25000
+  usdRate: 25000,
+  pointRate: 1000, // 1 POINT = 1.000đ  (10.000đ = 10 POINT)
+  minTopup: 10000  // số tiền donate/nạp tối thiểu (đ)
 };
 const BANKS = { 'Vietcombank':'970436','VietinBank':'970415','BIDV':'970418','Agribank':'970405','Techcombank':'970407','MB Bank':'970422','ACB':'970416','VPBank':'970432','TPBank':'970423','Sacombank':'970403','VIB':'970441','HDBank':'970437','OCB':'970448','MSB':'970426','SHB':'970443' };
 const CARRIERS = ['Viettel','Vinaphone','Mobifone','Vietnamobile','Gmobile'];
@@ -401,6 +435,9 @@ const SERVICE_PRICES=[
   ...PRODUCTS.map(product=>({service:product.name,description:product.desc,price:product.price,unit:'POINT'}))
 ];
 const HOME_UPDATES=[
+  {date:'27/10/2026',title:'Quy đổi POINT',description:'10.000đ = 10 POINT (1 POINT = 1.000đ). Giá Shop hiển thị kèm số tiền tương đương, thêm máy tính quy đổi trong mục Donate ở Profile.'},
+  {date:'27/10/2026',title:'Bill mô phỏng, giỏ hàng riêng, đổi mật khẩu',description:'Bill có dấu MÔ PHỎNG; giỏ hàng và lịch sử bill tách theo tài khoản; thêm đổi mật khẩu, xóa tài khoản, xóa lịch sử, bớt từng món trong giỏ và trang 404.'},
+  {date:'27/10/2026',title:'Bắt buộc đăng nhập',description:'Mọi trang và chức năng đều cần đăng nhập. Nâng cấp bảo mật: phiên có hạn, khóa tạm khi nhập sai, kiểm tra độ mạnh mật khẩu.'},
   {date:'26/10/2026',title:'Làm mới giao diện Home',description:'Bổ sung nhật ký cập nhật và bảng giá dịch vụ có thể mở xem.'},
   {date:'26/10/2026',title:'Cải tiến Shop và Kho File',description:'Thêm ảnh sản phẩm, danh mục game, tag và liên kết tải riêng.'},
   {date:'26/10/2026',title:'Cập nhật Profile MT MEDIA GLOBAL',description:'Bổ sung hồ sơ nhà phát triển, dự án và khu vực Donate.'}
@@ -410,6 +447,8 @@ const HOME_UPDATES=[
 const $ = (s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const esc = s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const vnd = n=>new Intl.NumberFormat('vi-VN').format(n);
+const pointVnd = p=>vnd(p*CONFIG.pointRate)+'đ';          // POINT → tiền
+const toPoint = v=>Math.floor(v/CONFIG.pointRate);        // tiền → POINT
 const Store = { // localStorage an toàn (try/catch)
   get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch{return d}},
   set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch{}}
@@ -419,7 +458,7 @@ const Modal = {
   open(html){const d=$('#dlg');d.innerHTML=html+'<div class="row"><button class="pk" data-close>Đóng</button></div>';d.showModal();$('[data-close]',d).onclick=()=>d.close()},
   el:()=>$('#dlg')
 };
-const openServicePrices=()=>Modal.open(`<h2>Bảng giá dịch vụ</h2><p style="color:var(--mu)">Giá tham khảo; vui lòng liên hệ để xác nhận giá và tình trạng mới nhất.</p><div style="overflow-x:auto"><table class="service-prices"><thead><tr><th>Dịch vụ</th><th>Thông tin</th><th>Giá</th></tr></thead><tbody>${SERVICE_PRICES.map(item=>`<tr><td>${esc(item.service)}</td><td>${esc(item.description)}</td><td>${typeof item.price==='number'?vnd(item.price)+' '+(item.unit||'đ'):esc(item.price)}</td></tr>`).join('')}</tbody></table></div><p class="service-price-note">Sản phẩm Shop được tính bằng POINT; giá dịch vụ khác hiển thị theo đơn vị riêng.</p>`);
+const openServicePrices=()=>Modal.open(`<h2>Bảng giá dịch vụ</h2><p style="color:var(--mu)">Giá tham khảo; vui lòng liên hệ để xác nhận giá và tình trạng mới nhất.</p><div style="overflow-x:auto"><table class="service-prices"><thead><tr><th>Dịch vụ</th><th>Thông tin</th><th>Giá</th></tr></thead><tbody>${SERVICE_PRICES.map(item=>`<tr><td>${esc(item.service)}</td><td>${esc(item.description)}</td><td>${typeof item.price==='number'?vnd(item.price)+' '+(item.unit||'đ')+(item.unit==='POINT'?' (≈ '+pointVnd(item.price)+')':''):esc(item.price)}</td></tr>`).join('')}</tbody></table></div><p class="service-price-note">Sản phẩm Shop được tính bằng POINT: ${vnd(CONFIG.pointRate*10)}đ = 10 POINT (1 POINT = ${vnd(CONFIG.pointRate)}đ). Giá dịch vụ khác hiển thị theo đơn vị riêng.</p>`);
 const EMPTY = t=>`<div class="empty"><svg viewBox="0 0 90 90" fill="none" stroke="currentColor" stroke-width="2"><rect x="12" y="20" width="66" height="50" rx="8"/><path d="M12 34h66M28 52h34" stroke="#00f0ff"/><circle cx="68" cy="26" r="3" fill="#ff2e93"/></svg><p>${t}</p></div>`;
 
 /* ================= THEME ================= */
@@ -452,16 +491,69 @@ const DeviceMode = {
   }
 };
 
-/* ================= AUTH (PBKDF2 + salt, không lưu mật khẩu thô) ================= */
+/* ================= AUTH (PBKDF2 + salt · phiên có hạn · khóa khi nhập sai · bắt buộc đăng nhập) ================= */
 const Auth = {
-  users:()=>Store.get('users',{}), me:()=>Store.get('session',null),
-  async hash(pw,salt){const k=await crypto.subtle.importKey('raw',new TextEncoder().encode(pw),'PBKDF2',false,['deriveBits']);
-    const b=await crypto.subtle.deriveBits({name:'PBKDF2',salt,iterations:100000,hash:'SHA-256'},k,256);return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')},
-  async register(u,pw){const us=this.users();if(us[u])throw Error('Tên đã tồn tại');
-    const salt=crypto.getRandomValues(new Uint8Array(16));us[u]={salt:[...salt],h:await this.hash(pw,salt)};Store.set('users',us);Store.set('session',u)},
-  async login(u,pw){const r=this.users()[u];if(!r)throw Error('Sai tài khoản hoặc mật khẩu');
-    if(await this.hash(pw,new Uint8Array(r.salt))!==r.h)throw Error('Sai tài khoản hoặc mật khẩu');Store.set('session',u)},
-  logout(){Store.set('session',null)}
+  TTL:7*864e5, REMEMBER_TTL:30*864e5, IDLE:60*60e3, MAXFAIL:5, ITER:310000, next:null, _t:0, _was:null,
+  users:()=>Store.get('users',{}),
+  find(u){const us=this.users(),k=Object.keys(us).find(x=>x.toLowerCase()===String(u).toLowerCase());return k?[k,us[k],us]:null},
+  _read(){let s=null;try{s=JSON.parse(sessionStorage.getItem('session'))}catch{}
+    if(!s)s=Store.get('session',null);
+    if(typeof s==='string'){s={u:s,exp:Date.now()+this.TTL,act:Date.now(),rem:true};Store.set('session',s)} // nâng cấp phiên cũ
+    return s&&typeof s==='object'?s:null},
+  _write(s){if(s.rem){Store.set('session',s);try{sessionStorage.removeItem('session')}catch{}}
+    else{try{sessionStorage.setItem('session',JSON.stringify(s))}catch{};try{localStorage.removeItem('session')}catch{}}},
+  _clear(){try{localStorage.removeItem('session')}catch{};try{sessionStorage.removeItem('session')}catch{}},
+  me(){const s=this._read();if(!s||!s.u)return null;const n=Date.now();
+    if(s.exp<n||n-(s.act||0)>this.IDLE||!this.users()[s.u]){this._clear();return null}return s.u},
+  touch(){const n=Date.now();if(n-this._t<30000)return;this._t=n;const s=this._read();if(s&&this.me()){s.act=n;this._write(s)}},
+  _start(k,rem){this._write({u:k,rem:!!rem,exp:Date.now()+(rem?this.REMEMBER_TTL:this.TTL),act:Date.now()});this._was=k;this.touch()},
+  async hash(pw,salt,it=this.ITER){if(!crypto?.subtle)throw Error('Trình duyệt cần HTTPS hoặc localhost để đăng nhập');
+    const k=await crypto.subtle.importKey('raw',new TextEncoder().encode(pw),'PBKDF2',false,['deriveBits']);
+    const b=await crypto.subtle.deriveBits({name:'PBKDF2',salt,iterations:it,hash:'SHA-256'},k,256);return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')},
+  pwError(pw){if(pw.length<8)return 'Mật khẩu tối thiểu 8 ký tự';if(!/[A-Za-z]/.test(pw)||!/\d/.test(pw))return 'Mật khẩu cần có cả chữ và số';return ''},
+  _fails:()=>Store.get('authFail',{}),
+  lockLeft(u){const f=this._fails()[String(u).toLowerCase()];return f&&f.until>Date.now()?Math.ceil((f.until-Date.now())/1000):0},
+  _bad(u){const all=this._fails(),k=String(u).toLowerCase(),f=all[k]||{n:0,until:0};f.n++;
+    if(f.n>=this.MAXFAIL)f.until=Date.now()+Math.min(30*2**(f.n-this.MAXFAIL),900)*1000;all[k]=f;Store.set('authFail',all)},
+  _ok(u){const a=this._fails();delete a[String(u).toLowerCase()];Store.set('authFail',a)},
+  async register(u,pw,rem){
+    if(!/^[A-Za-z0-9_.]{3,20}$/.test(u))throw Error('Tên tài khoản 3–20 ký tự: chữ, số, dấu _ hoặc .');
+    const er=this.pwError(pw);if(er)throw Error(er);
+    if(this.find(u))throw Error('Tên tài khoản đã tồn tại');
+    const us=this.users(),salt=crypto.getRandomValues(new Uint8Array(16));
+    us[u]={salt:[...salt],h:await this.hash(pw,salt),it:this.ITER,t:Date.now()};Store.set('users',us);this._start(u,rem)},
+  async login(u,pw,rem){
+    const left=this.lockLeft(u);if(left)throw Error(`Nhập sai quá nhiều lần. Thử lại sau ${left} giây`);
+    const f=this.find(u);
+    if(!f){await this.hash(pw,new Uint8Array(16)).catch(()=>{});this._bad(u);throw Error('Sai tài khoản hoặc mật khẩu')}
+    const [k,r,us]=f;
+    if(await this.hash(pw,new Uint8Array(r.salt),r.it||100000)!==r.h){this._bad(u);
+      const l=this.lockLeft(u);throw Error(l?`Nhập sai quá nhiều lần. Thử lại sau ${l} giây`:'Sai tài khoản hoặc mật khẩu')}
+    this._ok(u);
+    if((r.it||100000)<this.ITER){const salt=crypto.getRandomValues(new Uint8Array(16));r.salt=[...salt];r.h=await this.hash(pw,salt);r.it=this.ITER;us[k]=r;Store.set('users',us)} // tự nâng cấp mã băm
+    this._start(k,rem)},
+  logout(manual){this._clear();this._was=null;this.next=null;try{$('#dlg').close()}catch{}
+    if(manual)Toast('Đã đăng xuất');history.replaceState(null,'','#/login');Router.render(true)},
+  async _check(u,pw){const left=this.lockLeft(u);if(left)throw Error(`Nhập sai quá nhiều lần. Thử lại sau ${left} giây`);
+    const f=this.find(u);if(!f)throw Error('Tài khoản không tồn tại');const [k,r,us]=f;
+    if(await this.hash(pw,new Uint8Array(r.salt),r.it||100000)!==r.h){this._bad(u);const l=this.lockLeft(u);throw Error(l?`Nhập sai quá nhiều lần. Thử lại sau ${l} giây`:'Mật khẩu hiện tại không đúng')}
+    this._ok(u);return [k,r,us]},
+  async changePassword(old,nw){const u=this.me();if(!u)throw Error('Phiên đã hết hạn');const [k,r,us]=await this._check(u,old);
+    const er=this.pwError(nw);if(er)throw Error(er);if(nw===old)throw Error('Mật khẩu mới phải khác mật khẩu cũ');
+    const salt=crypto.getRandomValues(new Uint8Array(16));r.salt=[...salt];r.h=await this.hash(nw,salt);r.it=this.ITER;us[k]=r;Store.set('users',us)},
+  async deleteAccount(pw){const u=this.me();if(!u)throw Error('Phiên đã hết hạn');const [k,,us]=await this._check(u,pw);
+    delete us[k];Store.set('users',us);Store.set('history',Bill.allHistory().filter(b=>b.user!==k));try{localStorage.removeItem('cart_'+k)}catch{}
+    this.logout(true)},
+  guard(fn){const self=this;return function(...a){if(!self.me()){Toast('Vui lòng đăng nhập để sử dụng chức năng này',true);Router.render(true);return}return fn.apply(this,a)}},
+  watch(force){const m=this.me();
+    if(this._was&&!m){try{$('#dlg').close()}catch{}Toast('Phiên đăng nhập đã hết hạn, vui lòng đăng nhập lại',true);Router.render(true)}
+    else if(force&&!!m!==!!this._was)Router.render(true);
+    this._was=m},
+  init(){['pointerdown','keydown','scroll','touchstart'].forEach(ev=>addEventListener(ev,()=>this.touch(),{passive:true,capture:true}));
+    setInterval(()=>this.watch(),20000);
+    addEventListener('storage',e=>{if(e.key==='session'||e.key==='users')this.watch(true)});
+    document.addEventListener('visibilitychange',()=>{if(!document.hidden)this.watch()});
+    this._was=this.me()}
 };
 
 /* ================= VIETQR (EMVCo/NAPAS) ================= */
@@ -491,7 +583,9 @@ const FIELDS = {
 const TITLES={phone:'Nạp điện thoại',game:'Nạp game',bank:'Chuyển khoản'};
 const Bill = {
   tab:'phone', cur:null,
-  history:()=>Store.get('history',[]),
+  allHistory:()=>Store.get('history',[]),
+  history(){return this.allHistory().filter(b=>b.user===Auth.me())},
+  clearHistory(){Store.set('history',this.allHistory().filter(b=>b.user!==Auth.me()))},
   view(){return `<h2>Tạo Bill</h2><div class="two"><section class="glass card" style="padding:18px"><div class="tabs" role="tablist">${Object.keys(TITLES).map(k=>`<button role="tab" data-t="${k}" aria-selected="${k===this.tab}">${TITLES[k]}</button>`).join('')}</div><form id="bf" novalidate>${this.form()}<div class="row"><button class="pk" type="submit">⚡ Tạo bill</button></div></form></section><section><div id="bill" class="bill" aria-live="polite">${EMPTY('Điền form để xem trước bill').replace('class="empty"','class="empty" style="color:#8a96b4"')}</div><div class="row" id="acts" hidden><button data-a="copy">Sao chép</button><button data-a="png">Tải PNG</button><button data-a="pdf">Xuất PDF</button><button data-a="print">In</button><button data-a="share">Chia sẻ</button></div></section></div><h3 style="margin-top:24px">Lịch sử gần đây</h3>${this.histHTML(5)}`},
   form(){return FIELDS[this.tab].map(f=>`<label for="f_${f.id}">${f.l}</label>${f.o?`<select id="f_${f.id}">${f.o.map(x=>`<option>${esc(x)}</option>`).join('')}</select>`:`<input id="f_${f.id}" placeholder="${f.ph||''}" inputmode="${f.im||'text'}" autocomplete="off" aria-describedby="e_${f.id}"><div class="err" id="e_${f.id}"></div>`}`).join('')},
   histHTML(n){const h=this.history().slice(0,n);return h.length?`<div class="grid">${h.map(b=>`<div class="glass card"><b>${esc(b.title)}</b><br><span class="tag">${esc(b.code)}</span><div class="pr">${esc(b.amt)}</div><small>${esc(b.time)}</small></div>`).join('')}</div>`:EMPTY('Chưa có bill nào')},
@@ -514,13 +608,13 @@ const Bill = {
       qr=VietQR.build({bin:BANKS[v.bank],acc:v.acc,amount:v.qrt.startsWith('Động')?Math.round(v.cur==='USD'?n*CONFIG.usdRate:n):'',note:(v.note||code).replace(/[^\w ]/g,'').slice(0,25)})}
     this.cur={code,time,title:TITLES[this.tab],rows,amt,qr:qr||`MTBILL|${code}|${this.tab}|${amt}`};
     const b=this.cur;
-    $('#bill').innerHTML=`<h3>MT MEDIA GLOBAL</h3><div style="color:#8a96b4">${esc(b.title)} · <span class="ok">● Thành công</span></div><div class="amt">${esc(b.amt)}</div><dl><dt>Mã bill</dt><dd>${b.code}</dd><dt>Thời gian</dt><dd>${b.time}</dd>${b.rows.map(r=>`<dt>${r[0]}</dt><dd>${esc(r[1])}</dd>`).join('')}</dl><div class="bill-codes" aria-label="Mã QR và mã vạch của hóa đơn"><div class="bill-code-item"><span class="bill-code-label">Mã QR</span><div class="qr bill-qr" id="qrbox"></div></div><div class="bill-code-item"><span class="bill-code-label">Mã vạch bill</span><svg id="bc" class="bill-barcode"></svg></div></div>`;
+    $('#bill').innerHTML=`<h3>MT MEDIA GLOBAL</h3><div style="color:#8a96b4">${esc(b.title)} · <span class="ok">● Bill mô phỏng</span></div><div class="amt">${esc(b.amt)}</div><dl><dt>Mã bill</dt><dd>${b.code}</dd><dt>Thời gian</dt><dd>${b.time}</dd>${b.rows.map(r=>`<dt>${r[0]}</dt><dd>${esc(r[1])}</dd>`).join('')}</dl><div class="bill-codes" aria-label="Mã QR và mã vạch của hóa đơn"><div class="bill-code-item"><span class="bill-code-label">Mã QR</span><div class="qr bill-qr" id="qrbox"></div></div><div class="bill-code-item"><span class="bill-code-label">Mã vạch bill</span><svg id="bc" class="bill-barcode"></svg></div></div><div class="bill-wm" aria-hidden="true">MÔ PHỎNG</div><p class="bill-note">Bill mô phỏng do MT MEDIA GLOBAL tạo, không có giá trị thanh toán hay chứng từ giao dịch.</p>`;
     drawQR($('#qrbox'),b.qr,120);JsBarcode('#bc',b.code,{height:48,width:1.6,fontSize:11,margin:6});
     $('#acts').hidden=false;
-    const h=this.history();h.unshift({code:b.code,time:b.time,title:b.title,amt:b.amt,user:Auth.me(),text:this.text()});Store.set('history',h.slice(0,30));
+    const h=this.allHistory();h.unshift({code:b.code,time:b.time,title:b.title,amt:b.amt,user:Auth.me(),text:this.text()});Store.set('history',h.slice(0,500));
     Toast('Đã tạo bill '+b.code)
   },
-  text(){const b=this.cur;return `━━ MT MEDIA GLOBAL ━━\n${b.title}\nMã: ${b.code}\nGiờ: ${b.time}\n${b.rows.map(r=>r.join(': ')).join('\n')}\nSố tiền: ${b.amt}\nTrạng thái: Thành công`},
+  text(){const b=this.cur;return `━━ MT MEDIA GLOBAL ━━\n${b.title}\nMã: ${b.code}\nGiờ: ${b.time}\n${b.rows.map(r=>r.join(': ')).join('\n')}\nSố tiền: ${b.amt}\nTrạng thái: Bill mô phỏng (không có giá trị thanh toán)`},
   copy(){navigator.clipboard?.writeText(this.text()).then(()=>Toast('Đã sao chép bill'),()=>Toast('Không thể sao chép',true))},
   async canvas(){return html2canvas($('#bill'),{scale:3,backgroundColor:'#0b0e1c'})},
   async png(){const c=await this.canvas(),u=c.toDataURL('image/png');const a=document.createElement('a');a.href=u;a.download=this.cur.code+'.png';a.click();
@@ -532,17 +626,27 @@ const Bill = {
 
 /* ================= CART ================= */
 const Cart = {
-  items:()=>Store.get('cart',[]),
-  add(id){const c=this.items();c.push(id);Store.set('cart',c);this.badge();Toast('Đã thêm vào giỏ')},
-  badge(){$('#cartN').textContent=this.items().length},
-  open(){const c=this.items().map(id=>PRODUCTS.find(p=>p.id===id)).filter(Boolean),t=c.reduce((s,p)=>s+p.price,0);
-    Modal.open(`<h3>Giỏ hàng</h3>${c.length?c.map(p=>`<div>${esc(p.name)} — ${vnd(p.price)} POINT</div>`).join('')+`<p class="pr">Tổng: ${vnd(t)} POINT</p><button class="pk" id="clr">Xóa giỏ</button>`:EMPTY('Giỏ trống')}`);
-    const b=$('#clr');if(b)b.onclick=()=>{Store.set('cart',[]);this.badge();Modal.el().close()}}
+  key:()=>'cart_'+(Auth.me()||''),
+  items(){return Store.get(this.key(),[])},
+  add(id){const c=this.items();c.push(id);Store.set(this.key(),c);this.badge();Toast('Đã thêm vào giỏ')},
+  remove(id){const c=this.items(),i=c.indexOf(id);if(i>-1)c.splice(i,1);Store.set(this.key(),c);this.badge()},
+  clear(){Store.set(this.key(),[]);this.badge()},
+  badge(){$('#cartN').textContent=Auth.me()?this.items().length:0},
+  open(){const cnt={};this.items().forEach(id=>cnt[id]=(cnt[id]||0)+1);
+    const rows=Object.keys(cnt).map(id=>PRODUCTS.find(p=>p.id===id)).filter(Boolean),t=rows.reduce((a,p)=>a+p.price*cnt[p.id],0);
+    Modal.open(`<h3>Giỏ hàng</h3>${rows.length?rows.map(p=>`<div class="cart-line"><span>${esc(p.name)} × ${cnt[p.id]} — ${vnd(p.price*cnt[p.id])} POINT (≈ ${pointVnd(p.price*cnt[p.id])})</span><button type="button" data-rm="${esc(p.id)}" aria-label="Bớt 1 ${esc(p.name)}">−</button></div>`).join('')+`<p class="pr">Tổng: ${vnd(t)} POINT <small class="pt-vnd">≈ ${pointVnd(t)}</small></p><button class="pk" id="clr" type="button">Xóa giỏ</button>`:EMPTY('Giỏ trống')}`);
+    $$('[data-rm]',Modal.el()).forEach(b=>b.onclick=()=>{this.remove(b.dataset.rm);Modal.el().close();this.open()});
+    const b=$('#clr');if(b)b.onclick=()=>{this.clear();Modal.el().close()}}
 };
 
 /* ===== Ảnh sản phẩm: ảnh được đặt bằng liên kết trong PRODUCTS.img ===== */
 const SHOP_FALLBACK='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=85';
 const pimg=(p,cls='pimg')=>`<img class="${cls}" loading="lazy" alt="${esc(p.name)}" src="${esc(p.img||SHOP_FALLBACK)}" data-f="${SHOP_FALLBACK}" onerror="this.onerror=null;this.src=this.dataset.f">`;
+
+/* ===== Chặn chức năng khi chưa đăng nhập (lớp bảo vệ thứ hai, ngoài Router) ===== */
+Modal.open=Auth.guard(Modal.open);
+['add','open','remove','clear'].forEach(k=>Cart[k]=Auth.guard(Cart[k]));
+['make','copy','png','pdf','print','share','clearHistory'].forEach(k=>Bill[k]=Auth.guard(Bill[k]));
 
 /* ================= VIEWS ================= */
 const Views = {
@@ -555,11 +659,11 @@ const Views = {
     let cat='Tất cả',q='';const cats=['Tất cả',...new Set(PRODUCTS.map(p=>p.cat))];
     const draw=()=>{const r=PRODUCTS.filter(p=>(cat==='Tất cả'||p.cat===cat)&&p.name.toLowerCase().includes(q));
       $('#cats').innerHTML=cats.map(c=>`<button class="chip" aria-pressed="${c===cat}" data-c="${c}">${c}</button>`).join('');
-      $('#list').innerHTML=r.length?r.map(p=>`<article class="glass catalog-card"><img class="catalog-image" src="${esc(p.img||SHOP_FALLBACK)}" data-f="${SHOP_FALLBACK}" alt="${esc(p.name)}" loading="lazy" onerror="this.onerror=null;this.src=this.dataset.f"><div class="catalog-body"><span class="tag">${esc(p.cat)}</span><strong class="catalog-status">Còn hàng</strong><h3 class="catalog-title">${esc(p.name)}</h3><p class="catalog-description">${esc(p.desc)}</p><span class="catalog-price">${vnd(p.price)} POINT</span><div class="catalog-actions"><button type="button" data-product-detail="${esc(p.id)}">Xem chi tiết</button><a class="btn pk" href="${DEV_CONTACT}" target="_blank" rel="noopener noreferrer">Liên hệ</a></div></div></article>`).join(''):EMPTY('Không tìm thấy sản phẩm');
+      $('#list').innerHTML=r.length?r.map(p=>`<article class="glass catalog-card"><img class="catalog-image" src="${esc(p.img||SHOP_FALLBACK)}" data-f="${SHOP_FALLBACK}" alt="${esc(p.name)}" loading="lazy" onerror="this.onerror=null;this.src=this.dataset.f"><div class="catalog-body"><span class="tag">${esc(p.cat)}</span><strong class="catalog-status">Còn hàng</strong><h3 class="catalog-title">${esc(p.name)}</h3><p class="catalog-description">${esc(p.desc)}</p><span class="catalog-price">${vnd(p.price)} POINT <small class="pt-vnd">≈ ${pointVnd(p.price)}</small></span><div class="catalog-actions"><button type="button" data-product-detail="${esc(p.id)}">Xem chi tiết</button><a class="btn pk" href="${DEV_CONTACT}" target="_blank" rel="noopener noreferrer">Liên hệ</a></div></div></article>`).join(''):EMPTY('Không tìm thấy sản phẩm');
       $$('[data-c]').forEach(b=>b.onclick=()=>{cat=b.dataset.c;draw()});
       $$('[data-product-detail]').forEach(b=>b.onclick=()=>{
         const p=PRODUCTS.find(product=>product.id===b.dataset.productDetail);
-        Modal.open(`<div class="detail-head"><h2>${esc(p.name)}</h2></div><img class="catalog-image" src="${esc(p.img||SHOP_FALLBACK)}" alt="${esc(p.name)}" onerror="this.onerror=null;this.src='${SHOP_FALLBACK}'"><p>${esc(p.desc)}</p><span class="catalog-price">${vnd(p.price)} POINT</span><div class="catalog-actions"><button class="pk" id="addProduct" type="button">+ Thêm vào giỏ</button><a class="btn" href="${DEV_CONTACT}" target="_blank" rel="noopener noreferrer">Liên hệ sản phẩm</a></div>`);
+        Modal.open(`<div class="detail-head"><h2>${esc(p.name)}</h2></div><img class="catalog-image" src="${esc(p.img||SHOP_FALLBACK)}" alt="${esc(p.name)}" onerror="this.onerror=null;this.src='${SHOP_FALLBACK}'"><p>${esc(p.desc)}</p><span class="catalog-price">${vnd(p.price)} POINT <small class="pt-vnd">≈ ${pointVnd(p.price)}</small></span><div class="catalog-actions"><button class="pk" id="addProduct" type="button">+ Thêm vào giỏ</button><a class="btn" href="${DEV_CONTACT}" target="_blank" rel="noopener noreferrer">Liên hệ sản phẩm</a></div>`);
         $('#addProduct').onclick=()=>Cart.add(p.id)
       })};
     $('#q').oninput=e=>{q=e.target.value.toLowerCase();draw()};draw()}},
@@ -643,16 +747,36 @@ const Views = {
         <h2>DONATE</h2><p class="donate-description">Nếu bạn thấy các công cụ của MT MEDIA GLOBAL hữu ích, có thể ủng hộ qua mã QR bên dưới. Cảm ơn bạn rất nhiều!</p>
         <div class="qr-frame"><img class="donate-qr" id="dq" src="${DONATE_QR}" alt="Mã QR nhận tiền MT MEDIA GLOBAL - VO MINH THIEN" loading="lazy"></div>
         <div class="donate-name">${esc(CONFIG.donate.name)}</div><div class="donate-note">QR nhận tiền từ mọi ứng dụng chuyển tiền</div>
+        <div class="pt-calc"><label for="dv">Số tiền donate (VND)</label><input id="dv" inputmode="numeric" placeholder="${vnd(CONFIG.minTopup)}" autocomplete="off"><div class="pt-presets">${[10000,50000,100000,200000].map(v=>`<button type="button" data-dv="${v}">${vnd(v)}đ</button>`).join('')}</div><div class="pt-out" id="dp" aria-live="polite">Nhập số tiền để xem số POINT</div><div class="donate-note">Quy đổi: ${vnd(CONFIG.pointRate*10)}đ = 10 POINT · 1 POINT = ${vnd(CONFIG.pointRate)}đ</div><div class="row" style="justify-content:center"><button type="button" id="dcopy">Sao chép tin nhắn xác nhận</button><a class="btn pk" href="${DEV_CONTACT}" target="_blank" rel="noopener noreferrer">Gửi qua Zalo</a></div></div>
         <div class="donate-actions"><button class="pk" id="dd" type="button">Tải mã QR</button><button id="dc" type="button">Sao chép tên</button></div>
         <div class="row" style="justify-content:center"><button id="dreset" type="button">Dùng QR mặc định</button><label class="btn">Tải ảnh QR lên<input type="file" id="dup" accept="image/*" hidden></label></div>
         <div class="donate-note" id="donateMsg" role="status"></div>
       </article>
     </section>
     <section class="glass card profile-account">
-      ${u?`<div class="row" style="justify-content:space-between;align-items:center"><div><span class="tag">Đã đăng nhập</span> <b>${esc(u)}</b></div><div class="row" style="margin-top:0"><button id="th" type="button">Đổi theme</button><button id="lo" class="pk" type="button">Đăng xuất</button></div></div><h3>Bill đã tạo</h3>${h.length?`<div class="grid">${h.map(b=>`<div class="glass card"><b>${esc(b.title)}</b> <span class="tag">${esc(b.code)}</span><div class="pr">${esc(b.amt)}</div><small>${esc(b.time)}</small></div>`).join('')}</div>`:EMPTY('Chưa tạo bill nào')}`:`<div class="row" style="justify-content:space-between;align-items:center"><span>Bạn chưa đăng nhập</span><a class="btn pk" href="#/login">Đăng nhập / Đăng ký</a></div>`}
+      ${u?`<div class="row" style="justify-content:space-between;align-items:center"><div><span class="tag">Đã đăng nhập</span> <b>${esc(u)}</b></div><div class="row" style="margin-top:0"><button id="th" type="button">Đổi theme</button><button id="cpw" type="button">Đổi mật khẩu</button><button id="del" type="button">Xóa tài khoản</button><button id="lo" class="pk" type="button">Đăng xuất</button></div></div><div class="row" style="justify-content:space-between;align-items:center"><h3 style="margin:0">Bill đã tạo</h3>${h.length?'<button id="clh" type="button">Xóa lịch sử</button>':''}</div>${h.length?`<div class="grid">${h.map(b=>`<div class="glass card"><b>${esc(b.title)}</b> <span class="tag">${esc(b.code)}</span><div class="pr">${esc(b.amt)}</div><small>${esc(b.time)}</small></div>`).join('')}</div>`:EMPTY('Chưa tạo bill nào')}`:`<div class="row" style="justify-content:space-between;align-items:center"><span>Bạn chưa đăng nhập</span><a class="btn pk" href="#/login">Đăng nhập / Đăng ký</a></div>`}
     </section>`},
-    init(){const lo=$('#lo');if(lo)lo.onclick=()=>{Auth.logout();Router.render()};
+    init(){const lo=$('#lo');if(lo)lo.onclick=()=>Auth.logout(true);
       const theme=$('#th');if(theme)theme.onclick=()=>$('#themeBtn').click();
+      const dv=$('#dv');if(dv){
+        const amt=()=>parseInt(dv.value.replace(/\D/g,''),10)||0;
+        const calc=()=>{const n=amt();$('#dp').innerHTML=!n?'Nhập số tiền để xem số POINT':n<CONFIG.minTopup?`Tối thiểu ${vnd(CONFIG.minTopup)}đ`:`${vnd(n)}đ = <b>${vnd(toPoint(n))} POINT</b>`};
+        dv.oninput=calc;$$('[data-dv]').forEach(b=>b.onclick=()=>{dv.value=b.dataset.dv;calc()});
+        $('#dcopy').onclick=()=>{const n=amt();if(n<CONFIG.minTopup)return Toast(`Nhập số tiền tối thiểu ${vnd(CONFIG.minTopup)}đ`,true);
+          const msg=`Nạp POINT | Tài khoản: ${Auth.me()} | Donate: ${vnd(n)}đ | Nhận: ${vnd(toPoint(n))} POINT`;
+          navigator.clipboard?.writeText(msg).then(()=>Toast('Đã sao chép. Dán vào Zalo kèm ảnh chuyển khoản'),()=>Toast('Không thể sao chép',true))}}
+      const clh=$('#clh');if(clh)clh.onclick=()=>{if(!confirm('Xóa toàn bộ lịch sử bill của tài khoản này?'))return;Bill.clearHistory();Toast('Đã xóa lịch sử bill');Router.render(true)};
+      const cpw=$('#cpw');if(cpw)cpw.onclick=()=>{
+        Modal.open(`<h3>Đổi mật khẩu</h3><form id="cpf" novalidate><label for="o1">Mật khẩu hiện tại</label><input id="o1" type="password" autocomplete="current-password"><label for="n1">Mật khẩu mới (≥ 8 ký tự, có chữ và số)</label><input id="n1" type="password" autocomplete="new-password"><label for="n2">Nhập lại mật khẩu mới</label><input id="n2" type="password" autocomplete="new-password"><div class="err" id="ce" role="alert"></div><div class="row"><button class="pk" type="submit">Lưu mật khẩu</button></div></form>`);
+        $('#cpf').onsubmit=async e=>{e.preventDefault();const ce=$('#ce');ce.textContent='';
+          if(!$('#o1').value)return ce.textContent='Vui lòng nhập mật khẩu hiện tại';
+          if($('#n1').value!==$('#n2').value)return ce.textContent='Mật khẩu nhập lại không khớp';
+          try{await Auth.changePassword($('#o1').value,$('#n1').value);Modal.el().close();Toast('Đã đổi mật khẩu')}catch(x){ce.textContent=x.message}}};
+      const del=$('#del');if(del)del.onclick=()=>{
+        Modal.open(`<h3>Xóa tài khoản</h3><p style="color:var(--pk)">Hành động này xóa tài khoản, giỏ hàng và lịch sử bill trên thiết bị này và không thể hoàn tác.</p><form id="dlf" novalidate><label for="d1">Nhập mật khẩu để xác nhận</label><input id="d1" type="password" autocomplete="current-password"><div class="err" id="de" role="alert"></div><div class="row"><button class="pk" type="submit">Xóa vĩnh viễn</button></div></form>`);
+        $('#dlf').onsubmit=async e=>{e.preventDefault();const de=$('#de');de.textContent='';
+          if(!$('#d1').value)return de.textContent='Vui lòng nhập mật khẩu';
+          try{await Auth.deleteAccount($('#d1').value)}catch(x){de.textContent=x.message}}};
       const box=$('#dq'),savedQR=Store.get('donateImg',null),msg=$('#donateMsg');
       if(savedQR)box.src=savedQR;
       $('#dc').onclick=()=>navigator.clipboard?.writeText(CONFIG.donate.name).then(()=>{msg.textContent='Đã sao chép tên'},()=>Toast('Không thể sao chép',true));
@@ -680,7 +804,7 @@ const Views = {
     <section id="legal-privacy" class="glass legal-section">
       <h2>Chính sách bảo mật</h2>
       <h3>1. Dữ liệu được lưu</h3>
-      <p>Website chạy phía trình duyệt và có thể lưu một số dữ liệu trên thiết bị bằng localStorage, gồm tùy chọn giao diện/chế độ, giỏ hàng, lịch sử bill và tài khoản đăng ký cục bộ. Mật khẩu đăng ký được băm trước khi lưu; không nên dùng lại mật khẩu quan trọng. Dữ liệu cục bộ có thể mất khi bạn xóa dữ liệu trình duyệt hoặc đổi thiết bị.</p>
+      <p>Website chạy phía trình duyệt và có thể lưu một số dữ liệu trên thiết bị bằng localStorage, gồm tùy chọn giao diện/chế độ, giỏ hàng, lịch sử bill, tài khoản đăng ký cục bộ và phiên đăng nhập. Phiên tự hết hạn sau 7 ngày (30 ngày nếu bạn chọn "Ghi nhớ đăng nhập") hoặc sau 60 phút không thao tác. Giỏ hàng và lịch sử bill được tách riêng theo từng tài khoản; bạn có thể đổi mật khẩu, xóa lịch sử hoặc xóa tài khoản trong trang Profile. Mật khẩu đăng ký được băm trước khi lưu; không nên dùng lại mật khẩu quan trọng. Dữ liệu cục bộ có thể mất khi bạn xóa dữ liệu trình duyệt hoặc đổi thiết bị.</p>
       <h3>2. Thông tin nhập vào biểu mẫu</h3>
       <p>Thông tin bạn nhập để tạo bill được xử lý để hiển thị bill và QR trong trình duyệt. Lịch sử bill có thể được lưu cục bộ trên thiết bị. Hãy tránh nhập thông tin nhạy cảm không cần thiết và không dùng ảnh bill làm bằng chứng giao dịch thực tế.</p>
       <h3>3. Dịch vụ của bên thứ ba</h3>
@@ -708,23 +832,66 @@ const Views = {
     $$('[data-legal-link]').forEach(link=>{if(link.dataset.legalLink===route)link.setAttribute('aria-current','page')});
     requestAnimationFrame(()=>document.getElementById(section)?.scrollIntoView({block:'start'}))
   }},
-  login:{t:'Đăng nhập',html:()=>`<h2>Đăng nhập / Đăng ký</h2><form class="glass card" id="af" style="max-width:380px"><label for="u">Tên tài khoản</label><input id="u" required minlength="3" autocomplete="username"><label for="p">Mật khẩu (≥ 6 ký tự)</label><input id="p" type="password" required minlength="6" autocomplete="current-password"><div class="err" id="ae"></div><div class="row"><button class="pk" data-m="login">Đăng nhập</button><button type="button" data-m="register">Đăng ký</button></div></form>`,init(){
-    let mode='login';const f=$('#af');$$('[data-m]').forEach(b=>b.onclick=()=>{mode=b.dataset.m;if(b.type==='button')f.requestSubmit()});
-    f.onsubmit=async e=>{e.preventDefault();const u=$('#u').value.trim(),p=$('#p').value;
-      if(u.length<3||p.length<6)return $('#ae').textContent='Tên ≥ 3 ký tự, mật khẩu ≥ 6 ký tự';
-      try{await Auth[mode](u,p);Toast('Xin chào '+u);location.hash='#/profile'}catch(x){$('#ae').textContent=x.message}}}}
+  notfound:{t:'Không tìm thấy',html:()=>`<section class="hero"><h1>404</h1><p>Trang bạn tìm không tồn tại hoặc đã được di chuyển.</p><div class="row" style="justify-content:center"><a class="btn pk" href="#/home">Về trang chủ</a></div></section>`},
+  login:{t:'Đăng nhập',html:()=>`<div class="auth-wrap"><section class="glass auth-card">
+    <div class="auth-brand"><img class="brand-mark" src="${DEV_LOGO}" alt=""><div><h2>MT <span>MEDIA</span> GLOBAL</h2><small>Đăng nhập để sử dụng toàn bộ chức năng</small></div></div>
+    <div class="auth-gate" id="ag" role="status" hidden>🔒 Bạn cần đăng nhập để truy cập nội dung này.</div>
+    <div class="tabs" role="tablist" aria-label="Chọn chế độ"><button type="button" role="tab" data-m="login" aria-selected="true">Đăng nhập</button><button type="button" role="tab" data-m="register" aria-selected="false">Đăng ký</button></div>
+    <form id="af" novalidate>
+      <label for="u">Tên tài khoản</label><input id="u" maxlength="20" autocomplete="username" autocapitalize="none" spellcheck="false">
+      <label for="p">Mật khẩu</label><div class="pw"><input id="p" type="password" autocomplete="current-password"><button type="button" id="pt" aria-label="Hiện mật khẩu" aria-pressed="false">👁</button></div>
+      <div id="regOnly" hidden><div class="meter" aria-hidden="true"><i id="mb" data-s="0"></i></div><small id="mt">Tối thiểu 8 ký tự, gồm chữ và số</small>
+        <label for="p2">Nhập lại mật khẩu</label><input id="p2" type="password" autocomplete="new-password"></div>
+      <label class="chk"><input type="checkbox" id="rem" checked> Ghi nhớ đăng nhập (30 ngày)</label>
+      <div class="err" id="ae" role="alert"></div>
+      <div class="row"><button class="pk" id="sb" type="submit">Đăng nhập</button></div>
+    </form>
+    <p class="auth-legal">Bằng việc đăng ký, bạn đồng ý với <a href="#/legal/terms">Điều khoản</a> và <a href="#/legal/privacy">Chính sách bảo mật</a>.</p>
+  </section></div>`,init(){
+    let mode='login',tick=0;const u=$('#u'),p=$('#p'),p2=$('#p2'),ae=$('#ae'),sb=$('#sb');
+    if(Auth.next&&!/^#\/login/.test(Auth.next))$('#ag').hidden=false;
+    const LV=['Rất yếu','Yếu','Trung bình','Khá','Mạnh'];
+    const meter=()=>{const v=p.value;let s=0;if(v.length>=8)s++;if(v.length>=12)s++;if(/[a-z]/.test(v)&&/[A-Z]/.test(v))s++;if(/\d/.test(v)&&/[A-Za-z]/.test(v))s++;if(/[^A-Za-z0-9]/.test(v))s++;s=Math.min(s,4);
+      const b=$('#mb');b.dataset.s=v?s:0;b.style.width=v?(s+1)*20+'%':'0';$('#mt').textContent=v?'Độ mạnh: '+LV[s]:'Tối thiểu 8 ký tự, gồm chữ và số'};
+    const setMode=m=>{mode=m;$$('[data-m]').forEach(b=>b.setAttribute('aria-selected',b.dataset.m===m));
+      $('#regOnly').hidden=m!=='register';sb.textContent=m==='login'?'Đăng nhập':'Tạo tài khoản';
+      p.autocomplete=m==='login'?'current-password':'new-password';ae.textContent='';meter()};
+    $$('[data-m]').forEach(b=>b.onclick=()=>setMode(b.dataset.m));
+    p.addEventListener('input',()=>{if(mode==='register')meter()});
+    $('#pt').onclick=()=>{const show=p.type==='password';p.type=p2.type=show?'text':'password';$('#pt').setAttribute('aria-pressed',show);$('#pt').setAttribute('aria-label',show?'Ẩn mật khẩu':'Hiện mật khẩu')};
+    const lockUI=n=>{clearInterval(tick);sb.disabled=true;const t0=Date.now()+n*1000;
+      const step=()=>{const l=Math.ceil((t0-Date.now())/1000);if(l<=0){clearInterval(tick);sb.disabled=false;ae.textContent='';return}ae.textContent=`Nhập sai quá nhiều lần. Thử lại sau ${l} giây`};step();tick=setInterval(step,1000)};
+    $('#af').onsubmit=async e=>{e.preventDefault();const name=u.value.trim(),pw=p.value;ae.textContent='';
+      if(name.length<3)return ae.textContent='Tên tài khoản tối thiểu 3 ký tự';
+      if(mode==='register'){const er=Auth.pwError(pw);if(er)return ae.textContent=er;if(pw!==p2.value)return ae.textContent='Mật khẩu nhập lại không khớp'}
+      else if(!pw)return ae.textContent='Vui lòng nhập mật khẩu';
+      sb.disabled=true;
+      try{await Auth[mode](name,pw,$('#rem').checked);Toast('Xin chào '+Auth.me());Router.render(true)}
+      catch(x){ae.textContent=x.message;const l=Auth.lockLeft(name);if(l)lockUI(l);else sb.disabled=false}}}}
 };
 Views.profile.html=Views.profile.html.bind(Views.profile);
 
 /* ================= ROUTER (hash + skeleton + title động) ================= */
 const NAV=[['home','Home'],['bill','Tạo Bill'],['shop','Shop'],['files','Files'],['profile','Profile']];
+const PUBLIC_ROUTES=['login','legal']; // trang xem được khi chưa đăng nhập (đăng nhập + điều khoản/chính sách)
 const Router = {
   timer:0,
   render(instant){
-    const key=(location.hash.replace('#/','')||'home').split('/')[0].split('?')[0], v=Views[key]||Views.home, k=Views[key]?key:'home';
+    const keyOf=()=>(location.hash.replace('#/','')||'home').split('/')[0].split('?')[0];
+    let key=keyOf();const me=Auth.me();
+    if(!me&&!PUBLIC_ROUTES.includes(key)){ // chưa đăng nhập → chuyển về trang đăng nhập, nhớ nơi muốn vào
+      if(Views[key])Auth.next=location.hash;
+      history.replaceState(null,'','#/login');key='login';instant=true
+    }else if(me&&key==='login'){ // đã đăng nhập → về trang đã yêu cầu (hoặc Home)
+      const n=Auth.next;Auth.next=null;history.replaceState(null,'',n&&!/^#\/login/.test(n)?n:'#/home');key=keyOf()
+    }
+    const v=Views[key]||Views.notfound, k=Views[key]?key:'';
+    document.body.classList.toggle('guest',!me);
     closeMobileMenu();
     document.title=v.t+' · MT MEDIA GLOBAL';
-    $('#nav').innerHTML=NAV.map(n=>`<a href="#/${n[0]}" ${n[0]===k?'aria-current="page"':''}>${n[1]}</a>`).join('')+`<a href="#/login" ${k==='login'?'aria-current="page"':''}>${Auth.me()?'Tài khoản':'Đăng nhập'}</a>`;
+    $('#nav').innerHTML=me?NAV.map(n=>`<a href="#/${n[0]}" ${n[0]===k?'aria-current="page"':''}>${n[1]}</a>`).join('')+`<button type="button" class="nav-out" id="navOut" title="Đăng xuất">⏻ ${esc(me)}</button>`:'';
+    const out=$('#navOut');if(out)out.onclick=()=>Auth.logout(true);
+    Cart.badge();
     const app=$('#app');clearTimeout(this.timer);
     const go=()=>{app.innerHTML=v.html();v.init&&v.init();app.focus({preventScroll:true})};
     if(instant)return go();
@@ -735,7 +902,7 @@ const Router = {
 /* ================= KHỞI ĐỘNG ================= */
 const closeMobileMenu=()=>{const button=$('#mobileMenuToggle');button.setAttribute('aria-expanded','false');button.setAttribute('aria-label','Mở menu');button.title='Mở menu'};
 $('#mobileMenuToggle').onclick=()=>{const button=$('#mobileMenuToggle'),open=button.getAttribute('aria-expanded')!=='true';button.setAttribute('aria-expanded',String(open));button.setAttribute('aria-label',open?'Đóng menu':'Mở menu');button.title=open?'Đóng menu':'Mở menu'};
-Theme.init();DeviceMode.init();Cart.badge();$('#cartBtn').onclick=()=>Cart.open();$('#zalo').href=CONFIG.zalo;$('#yr').textContent=new Date().getFullYear();
+Theme.init();DeviceMode.init();Auth.init();Cart.badge();$('#cartBtn').onclick=()=>Cart.open();$('#zalo').href=CONFIG.zalo;$('#yr').textContent=new Date().getFullYear();
 addEventListener('hashchange',()=>Router.render());Router.render(true);
 </script>
 </body>
